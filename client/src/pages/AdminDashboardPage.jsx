@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import Seo from '../components/common/Seo';
 import AppointmentManager from '../components/admin/AppointmentManager';
 import ServiceManager from '../components/admin/ServiceManager';
+import ProductManager from '../components/admin/ProductManager';
 import GalleryManager from '../components/admin/GalleryManager';
 import { useAuth } from '../context/AuthContext';
 
-const tabs = ['appointments', 'services', 'gallery'];
+const tabs = ['appointments', 'services', 'products', 'gallery'];
 
 export default function AdminDashboardPage() {
   const navigate = useNavigate();
@@ -47,6 +48,7 @@ export default function AdminDashboardPage() {
 
       {tab === 'appointments' && <AppointmentManager />}
       {tab === 'services' && <ServiceManager />}
+      {tab === 'products' && <ProductManager />}
       {tab === 'gallery' && <GalleryManager />}
     </section>
   );
